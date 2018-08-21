@@ -1,0 +1,7 @@
+SwiftHandyFrame.xcodeproj/xcuserdata/
+SwiftHandyFrame.xcworkspace/
+Pods/
+*.swp
+Podfile.lock
+.DS_Store
+SwiftHandyFrame.xcodeproj/project.xcworkspace/xcuserdata/

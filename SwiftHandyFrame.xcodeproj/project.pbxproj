@@ -12,6 +12,7 @@
 		4A6961A1212C0E6D00FC634A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A69619F212C0E6D00FC634A /* Main.storyboard */; };
 		4A6961A3212C0E6D00FC634A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6961A2212C0E6D00FC634A /* Assets.xcassets */; };
 		4A6961A6212C0E6D00FC634A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A6961A4212C0E6D00FC634A /* LaunchScreen.storyboard */; };
+		4A6961AF212C0F9600FC634A /* SwiftHandyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6961AE212C0F9600FC634A /* SwiftHandyFrame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4A6961A2212C0E6D00FC634A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A6961A5212C0E6D00FC634A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A6961A7212C0E6D00FC634A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A6961AE212C0F9600FC634A /* SwiftHandyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHandyFrame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,21 @@
 		4A69619A212C0E6D00FC634A /* SwiftHandyFrame */ = {
 			isa = PBXGroup;
 			children = (
+				4A6961AD212C0F7B00FC634A /* SwiftHandyFrame */,
 				4A69619B212C0E6D00FC634A /* AppDelegate.swift */,
 				4A69619D212C0E6D00FC634A /* ViewController.swift */,
 				4A69619F212C0E6D00FC634A /* Main.storyboard */,
 				4A6961A2212C0E6D00FC634A /* Assets.xcassets */,
 				4A6961A4212C0E6D00FC634A /* LaunchScreen.storyboard */,
 				4A6961A7212C0E6D00FC634A /* Info.plist */,
+			);
+			path = SwiftHandyFrame;
+			sourceTree = "<group>";
+		};
+		4A6961AD212C0F7B00FC634A /* SwiftHandyFrame */ = {
+			isa = PBXGroup;
+			children = (
+				4A6961AE212C0F9600FC634A /* SwiftHandyFrame.swift */,
 			);
 			path = SwiftHandyFrame;
 			sourceTree = "<group>";
@@ -135,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A6961AF212C0F9600FC634A /* SwiftHandyFrame.swift in Sources */,
 				4A69619E212C0E6D00FC634A /* ViewController.swift in Sources */,
 				4A69619C212C0E6D00FC634A /* AppDelegate.swift in Sources */,
 			);
@@ -281,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = THS9SRQVES;
 				INFOPLIST_FILE = SwiftHandyFrame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = THS9SRQVES;
 				INFOPLIST_FILE = SwiftHandyFrame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
