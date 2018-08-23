@@ -1,4 +1,4 @@
-pod "SwiftHandyFrame"
+> pod "SwiftHandyFrame"
 
 `shouldResize` means wether to extend the view to match the value you gave to left/right/bottom/top
 
