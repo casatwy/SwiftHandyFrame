@@ -227,7 +227,7 @@ extension UIView {
         let topSuperView = ct_topSuperView()
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topSuperView)
         let newOriginPoint = topSuperView.convert(fromViewOriginPoint, to: superview)
-        frame.origin.y = newOriginPoint.y - bottomGap - frame.size.height
+        frame.origin.y = newOriginPoint.y - bottomGap - fromView.frame.size.height
     }
     
     public func ct_setLeftGap(_ leftGap:CGFloat, fromView:UIView) {
@@ -235,7 +235,7 @@ extension UIView {
         let topSuperView = ct_topSuperView()
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topSuperView)
         let newOriginPoint = topSuperView.convert(fromViewOriginPoint, to: superview)
-        frame.origin.x = newOriginPoint.x + leftGap + frame.size.width
+        frame.origin.x = newOriginPoint.x + leftGap + fromView.frame.size.width
     }
     
     public func ct_setRightGap(_ rightGap:CGFloat, fromView:UIView) {
@@ -243,7 +243,7 @@ extension UIView {
         let topSuperView = ct_topSuperView()
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topSuperView)
         let newOriginPoint = topSuperView.convert(fromViewOriginPoint, to: superview)
-        frame.origin.x = newOriginPoint.x - rightGap - frame.size.width
+        frame.origin.x = newOriginPoint.x - rightGap - fromView.frame.size.width
     }
     
     //MARK: top/bottom/left/right equal to Other View
