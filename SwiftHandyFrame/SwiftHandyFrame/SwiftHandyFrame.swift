@@ -9,6 +9,18 @@
 import UIKit
 
 extension UIView {
+    // MARK: class method
+    public class func ct_ScreenWidth() -> CGFloat {
+        return UIScreen.main.bounds.size.width
+    }
+    
+    public class func ct_ScreenHeight() -> CGFloat {
+        return UIScreen.main.bounds.size.height
+    }
+    
+    public class func ct_ScreenSize() -> CGSize {
+        return UIScreen.main.bounds.size
+    }
     //MARK: Size
     public func ct_height() -> CGFloat {
         return frame.size.height
