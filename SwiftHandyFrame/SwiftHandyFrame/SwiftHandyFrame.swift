@@ -236,10 +236,8 @@ extension UIView {
     
     public func ct_setBottomGap(_ bottomGap:CGFloat, fromView:UIView) {
         let fromViewSuperView = fromView.superview ?? fromView
-        let topSuperView = ct_topSuperView()
-        let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topSuperView)
-        let newOriginPoint = topSuperView.convert(fromViewOriginPoint, to: superview)
-        frame.origin.y = newOriginPoint.y - bottomGap - fromView.frame.size.height
+        let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:superview)
+        frame.origin.y = fromViewOriginPoint.y - bottomGap - frame.size.height
     }
     
     public func ct_setLeftGap(_ leftGap:CGFloat, fromView:UIView) {
