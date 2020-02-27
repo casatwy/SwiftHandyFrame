@@ -24,6 +24,7 @@
         fillView.hf.setSize(CGSize(width: 20, height: 20))
         fillView.hf.fillWidth()
         fillView.hf.setCenterYEqualToView(positionEqualOtherView)
+        fillView.hf.setHeight(400)
 ```
 
 ![sample](sample.png)
