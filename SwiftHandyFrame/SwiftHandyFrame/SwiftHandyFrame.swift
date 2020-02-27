@@ -99,28 +99,29 @@ public extension HandyFrameView {
 
 // MARK: add width or height
 public extension HandyFrameView {
-    enum Side {
-        case left,right,top,bottom
+    enum HorizontalSide {
+        case left,right
     }
-    func addWidth(_ widthToAdd:CGFloat, on side:Side) {
+    enum VerticalSide {
+        case top,bottom
+    }
+    func addWidth(_ widthToAdd:CGFloat, on side:HorizontalSide) {
         switch side {
         case .left:
             targetView.frame.size.width += widthToAdd
             targetView.frame.origin.x -= widthToAdd
         case .right:
             targetView.frame.size.width += widthToAdd
-        default: return
         }
     }
 
-    func addHeight(_ heightToAdd:CGFloat, on side:Side) {
+    func addHeight(_ heightToAdd:CGFloat, on side:VerticalSide) {
         switch side {
         case .top:
             targetView.frame.size.height += heightToAdd
             targetView.frame.origin.y -= heightToAdd
         case .bottom:
             targetView.frame.size.height += heightToAdd
-        default: return
         }
     }
 }
