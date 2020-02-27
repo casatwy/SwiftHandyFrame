@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(shapeView)
@@ -19,33 +19,33 @@ class ViewController: UIViewController {
         view.addSubview(positionEqualOtherView)
         view.addSubview(fillView)
     }
-    
+
     override func viewWillLayoutSubviews() {
-        shapeView.ct_setSize(CGSize(width: 100, height: 100))
-        shapeView.ct_setLeft(20, shouldResize: false)
-        shapeView.ct_setBottom(200, shouldResize: true)
-        shapeView.ct_setTop(10, shouldResize: false)
+        shapeView.hf.setSize(CGSize(width: 100, height: 100))
+        shapeView.hf.setLeft(20, shouldResize: false)
+        shapeView.hf.setBottom(200, shouldResize: true)
+        shapeView.hf.setTop(10, shouldResize: false)
         
-        centerPositionWithOtherView.ct_setSize(CGSize(width: 50, height: 50))
-        centerPositionWithOtherView.ct_setCenterEqualToView(shapeView)
+        centerPositionWithOtherView.hf.setSize(CGSize(width: 50, height: 50))
+        centerPositionWithOtherView.hf.setCenterEqualToView(shapeView)
         
         gapInOtherView.frame = centerPositionWithOtherView.frame
-        gapInOtherView.ct_setInnerTopGap(200, shouldResize: false)
-        gapInOtherView.ct_setInnerBottomGap(200, shouldResize: true)
+        gapInOtherView.hf.setInnerTopGap(200, shouldResize: false)
+        gapInOtherView.hf.setInnerBottomGap(200, shouldResize: true)
         
         gapFromOtherView.frame = gapInOtherView.frame
-        gapFromOtherView.ct_setLeftGap(10, fromView: gapInOtherView)
+        gapFromOtherView.hf.setLeftGap(10, fromView: gapInOtherView)
         
         positionEqualOtherView.frame = gapFromOtherView.frame
-        positionEqualOtherView.ct_setInnerTopGap(500, shouldResize: true)
-        positionEqualOtherView.ct_bottomEqualToView(gapFromOtherView)
-        positionEqualOtherView.ct_setLeftGap(10, fromView: gapFromOtherView)
+        positionEqualOtherView.hf.setInnerTopGap(500, shouldResize: true)
+        positionEqualOtherView.hf.bottomEqualToView(gapFromOtherView)
+        positionEqualOtherView.hf.setLeftGap(10, fromView: gapFromOtherView)
         
-        fillView.ct_setSize(CGSize(width: 20, height: 20))
-        fillView.ct_fillWidth()
-        fillView.ct_setCenterYEqualToView(positionEqualOtherView)
+        fillView.hf.setSize(CGSize(width: 20, height: 20))
+        fillView.hf.fillWidth()
+        fillView.hf.setCenterYEqualToView(positionEqualOtherView)
     }
-    
+
     let _shapeView = UIView()
     var shapeView : UIView {
         get {
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             return _shapeView
         }
     }
-    
+
     let _centerPositionWithOtherView = UIView()
     var centerPositionWithOtherView : UIView {
         get {
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             return _centerPositionWithOtherView
         }
     }
-    
+
     let _gapInOtherView = UIView()
     var gapInOtherView : UIView {
         get {
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
             return _gapInOtherView
         }
     }
-    
+
     let _gapFromOtherView = UIView()
     var gapFromOtherView : UIView {
         get {
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
             return _gapFromOtherView
         }
     }
-    
+
     let _positionEqualOtherView = UIView()
     var positionEqualOtherView : UIView {
         get {
@@ -95,7 +95,7 @@ class ViewController: UIViewController {
             return _positionEqualOtherView
         }
     }
-    
+
     let _fillView = UIView()
     var fillView : UIView {
         get {
@@ -105,5 +105,4 @@ class ViewController: UIViewController {
             return _fillView
         }
     }
-    
 }
