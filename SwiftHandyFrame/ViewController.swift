@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(shapeView)
@@ -18,8 +18,10 @@ class ViewController: UIViewController {
         view.addSubview(gapFromOtherView)
         view.addSubview(positionEqualOtherView)
         view.addSubview(fillView)
+        view.addSubview(containerView)
+        containerView.addSubview(containerInnerItemView)
     }
-
+    
     override func viewWillLayoutSubviews() {
         shapeView.hf.setSize(CGSize(width: 100, height: 100))
         shapeView.hf.setLeft(20, shouldResize: false)
@@ -44,65 +46,60 @@ class ViewController: UIViewController {
         fillView.hf.setSize(CGSize(width: 20, height: 20))
         fillView.hf.fillWidth()
         fillView.hf.setCenterYEqualToView(positionEqualOtherView)
-    }
+        
+        containerView.hf.setSize(CGSize(width: 100, height: 100))
+        containerView.hf.setCenterEqualToView(view)
 
-    let _shapeView = UIView()
-    var shapeView : UIView {
-        get {
-            if _shapeView.backgroundColor == nil {
-                _shapeView.backgroundColor = .red
-            }
-            return _shapeView
-        }
+        containerInnerItemView.hf.setWidth(50)
+        containerInnerItemView.hf.setCenterEqualToView(containerView)
+        containerInnerItemView.hf.setInnerBottomGap(0, shouldResize: true)
     }
-
-    let _centerPositionWithOtherView = UIView()
-    var centerPositionWithOtherView : UIView {
-        get {
-            if _centerPositionWithOtherView.backgroundColor == nil {
-                _centerPositionWithOtherView.backgroundColor = .green
-            }
-            return _centerPositionWithOtherView
-        }
-    }
-
-    let _gapInOtherView = UIView()
-    var gapInOtherView : UIView {
-        get {
-            if _gapInOtherView.backgroundColor == nil {
-                _gapInOtherView.backgroundColor = .cyan
-            }
-            return _gapInOtherView
-        }
-    }
-
-    let _gapFromOtherView = UIView()
-    var gapFromOtherView : UIView {
-        get {
-            if _gapFromOtherView.backgroundColor == nil {
-                _gapFromOtherView.backgroundColor = .yellow
-            }
-            return _gapFromOtherView
-        }
-    }
-
-    let _positionEqualOtherView = UIView()
-    var positionEqualOtherView : UIView {
-        get {
-            if _positionEqualOtherView.backgroundColor == nil {
-                _positionEqualOtherView.backgroundColor = .magenta
-            }
-            return _positionEqualOtherView
-        }
-    }
-
-    let _fillView = UIView()
-    var fillView : UIView {
-        get {
-            if _fillView.backgroundColor == nil {
-                _fillView.backgroundColor = .orange
-            }
-            return _fillView
-        }
-    }
+    
+    lazy var containerView:UIView = {
+        let _containerView = UIView()
+        _containerView.backgroundColor = .black
+        return _containerView
+    }()
+    
+    lazy var containerInnerItemView:UIView = {
+        let _containerInnerItemView = UIView()
+        _containerInnerItemView.backgroundColor = .red
+        return _containerInnerItemView
+    }()
+    
+    lazy var shapeView : UIView = {
+        let _shapeView = UIView()
+        _shapeView.backgroundColor = .red
+        return _shapeView
+    }()
+    
+    lazy var centerPositionWithOtherView : UIView = {
+        let _centerPositionWithOtherView = UIView()
+        _centerPositionWithOtherView.backgroundColor = .green
+        return _centerPositionWithOtherView
+    }()
+    
+    lazy var gapInOtherView : UIView = {
+        let _gapInOtherView = UIView()
+        _gapInOtherView.backgroundColor = .cyan
+        return _gapInOtherView
+    }()
+    
+    lazy var gapFromOtherView : UIView = {
+        let _gapFromOtherView = UIView()
+        _gapFromOtherView.backgroundColor = .yellow
+        return _gapFromOtherView
+    }()
+    
+    lazy var positionEqualOtherView : UIView = {
+        let _positionEqualOtherView = UIView()
+        _positionEqualOtherView.backgroundColor = .magenta
+        return _positionEqualOtherView
+    }()
+    
+    lazy var fillView : UIView = {
+        let _fillView = UIView()
+        _fillView.backgroundColor = .orange
+        return _fillView
+    }()
 }

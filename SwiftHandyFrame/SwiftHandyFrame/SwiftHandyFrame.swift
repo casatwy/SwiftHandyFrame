@@ -97,6 +97,34 @@ public extension HandyFrameView {
     }
 }
 
+// MARK: add width or height
+public extension HandyFrameView {
+    enum Side {
+        case left,right,top,bottom
+    }
+    func addWidth(_ widthToAdd:CGFloat, on side:Side) {
+        switch side {
+        case .left:
+            targetView.frame.size.width += widthToAdd
+            targetView.frame.origin.x -= widthToAdd
+        case .right:
+            targetView.frame.size.width += widthToAdd
+        default: return
+        }
+    }
+
+    func addHeight(_ heightToAdd:CGFloat, on side:Side) {
+        switch side {
+        case .top:
+            targetView.frame.size.height += heightToAdd
+            targetView.frame.origin.y -= heightToAdd
+        case .bottom:
+            targetView.frame.size.height += heightToAdd
+        default: return
+        }
+    }
+}
+
 // MARK: Position: x, y, centerX, centerY, center
 public extension HandyFrameView {
     func x() -> CGFloat {
@@ -374,7 +402,8 @@ public extension HandyFrameView {
 
     func fill() {
         guard let superview = targetView.superview else { return }
-        targetView.frame = CGRect(x: 0, y: 0, width: superview.frame.size.width, height: superview.frame.size.height)
+        let height = superview.frame.size.height - safeAreaBottomGap
+        targetView.frame = CGRect(x: 0, y: 0, width: superview.frame.size.width, height: height)
     }
 }
 
