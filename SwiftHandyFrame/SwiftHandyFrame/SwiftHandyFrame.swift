@@ -171,7 +171,9 @@ public extension HandyFrameView {
 
 // MARK: Center related to other view
 public extension HandyFrameView {
-    func setCenterXEqualToView(_ view:UIView) {
+    func setCenterXEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topView = fetchTopView()
 
@@ -180,7 +182,9 @@ public extension HandyFrameView {
         setCenterX(centerPoint.x)
     }
 
-    func setCenterYEqualToView(_ view:UIView) {
+    func setCenterYEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topView = fetchTopView()
 
@@ -189,7 +193,9 @@ public extension HandyFrameView {
         setCenterY(centerPoint.y)
     }
 
-    func setCenterEqualToView(_ view:UIView) {
+    func setCenterEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topView = fetchTopView()
 
@@ -250,7 +256,9 @@ public extension HandyFrameView {
 
 // MARK: Position equal to view
 public extension HandyFrameView {
-    func topEqualToView(_ view:UIView) {
+    func topEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topSuperView = fetchTopView()
         let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
@@ -258,7 +266,9 @@ public extension HandyFrameView {
         targetView.frame.origin.y = newOriginPoint.y
     }
 
-    func bottomEqualToView(_ view:UIView) {
+    func bottomEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topSuperView = fetchTopView()
         let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
@@ -266,7 +276,9 @@ public extension HandyFrameView {
         targetView.frame.origin.y = newOriginPoint.y + view.frame.size.height - targetView.frame.size.height
     }
 
-    func leftEqualToView(_ view:UIView) {
+    func leftEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topSuperView = fetchTopView()
         let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
@@ -274,7 +286,9 @@ public extension HandyFrameView {
         targetView.frame.origin.x = newOriginPoint.x
     }
 
-    func rightEqualToView(_ view:UIView) {
+    func rightEqualToView(_ view:UIView?) {
+        guard let view = view else { return }
+        
         let viewSuperView = view.superview ?? view
         let topSuperView = fetchTopView()
         let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
@@ -356,7 +370,9 @@ public extension HandyFrameView {
                |                   |
  */
 public extension HandyFrameView {
-    func setTopGap(_ topGap:CGFloat, fromView:UIView) {
+    func setTopGap(_ topGap:CGFloat, fromView:UIView?) {
+        guard let fromView = fromView else { return }
+        
         let fromViewSuperView = fromView.superview ?? fromView
         let topView = fetchTopView()
         let viewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to: topView)
@@ -364,13 +380,17 @@ public extension HandyFrameView {
         targetView.frame.origin.y = newOriginPoint.y + topGap + fromView.frame.size.height
     }
 
-    func setBottomGap(_ bottomGap:CGFloat, fromView:UIView) {
+    func setBottomGap(_ bottomGap:CGFloat, fromView:UIView?) {
+        guard let fromView = fromView else { return }
+        
         let fromViewSuperView = fromView.superview ?? fromView
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:targetView.superview)
         targetView.frame.origin.y = fromViewOriginPoint.y - bottomGap - targetView.frame.size.height
     }
 
-    func setLeftGap(_ leftGap:CGFloat, fromView:UIView) {
+    func setLeftGap(_ leftGap:CGFloat, fromView:UIView?) {
+        guard let fromView = fromView else { return }
+        
         let fromViewSuperView = fromView.superview ?? fromView
         let topView = fetchTopView()
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topView)
@@ -378,7 +398,9 @@ public extension HandyFrameView {
         targetView.frame.origin.x = newOriginPoint.x + leftGap + fromView.frame.size.width
     }
 
-    func setRightGap(_ rightGap:CGFloat, fromView:UIView) {
+    func setRightGap(_ rightGap:CGFloat, fromView:UIView?) {
+        guard let fromView = fromView else { return }
+        
         let fromViewSuperView = fromView.superview ?? fromView
         let topView = fetchTopView()
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topView)
