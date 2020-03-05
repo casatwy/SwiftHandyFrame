@@ -252,7 +252,6 @@ public extension HandyFrameView {
         }
         targetView.frame.origin.y = top
     }
-<<<<<<< Updated upstream
 }
 
 // MARK: Position equal to view
@@ -279,38 +278,7 @@ public extension HandyFrameView {
 
     func leftEqualToView(_ view:UIView?) {
         guard let view = view else { return }
-=======
-    
-    //MARK: Center Position with Other View
-    public func ct_setCenterXEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-        
-        let superView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
-        
-        let viewCenterPoint = superView.convert(view.center, to:topSuperView)
-        let centerPoint = topSuperView.convert(viewCenterPoint, to:superview)
-        ct_setCenterX(centerPoint.x)
-    }
-    
-    public func ct_setCenterYEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-        
-        let superView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
-        
-        let viewCenterPoint = superView.convert(view.center, to:topSuperView)
-        let centerPoint = topSuperView.convert(viewCenterPoint, to:superview)
-        ct_setCenterY(centerPoint.y)
-    }
-    
-    public func ct_setCenterEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-        
-        let superView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
->>>>>>> Stashed changes
-        
+
         let viewSuperView = view.superview ?? view
         let topSuperView = fetchTopView()
         let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
@@ -379,7 +347,6 @@ public extension HandyFrameView {
             targetView.frame.origin.x = superview.frame.size.width - targetView.frame.size.width - rightGap
         }
     }
-<<<<<<< Updated upstream
 }
 
 // MARK: gap with other view
@@ -404,31 +371,6 @@ public extension HandyFrameView {
  */
 public extension HandyFrameView {
     func setTopGap(_ topGap:CGFloat, fromView:UIView?) {
-=======
-    
-    //MARK: top/bottom/left/right gap from Other View
-    /*
-     
-                   |                   |
-                   |                   |
-                   ---------------------
-                          top gap
-     ---           ---------------------           ---
-        |          |                   |           |
-        |          |                   |           |
-        |          |                   |           |
-        | left gap |        VIEW       | right gap |
-        |          |                   |           |
-        |          |                   |           |
-        |          |                   |           |
-      ---          ---------------------           ---
-                        bottom gap
-                   ---------------------
-                   |                   |
-                   |                   |
-     */
-    public func ct_setTopGap(_ topGap:CGFloat, fromView:UIView?) {
->>>>>>> Stashed changes
         guard let fromView = fromView else { return }
         
         let fromViewSuperView = fromView.superview ?? fromView
@@ -437,28 +379,16 @@ public extension HandyFrameView {
         let newOriginPoint = topView.convert(viewOriginPoint, to:targetView.superview)
         targetView.frame.origin.y = newOriginPoint.y + topGap + fromView.frame.size.height
     }
-<<<<<<< Updated upstream
 
     func setBottomGap(_ bottomGap:CGFloat, fromView:UIView?) {
         guard let fromView = fromView else { return }
         
-=======
-    
-    public func ct_setBottomGap(_ bottomGap:CGFloat, fromView:UIView?) {
-        guard let fromView = fromView else { return }
-
->>>>>>> Stashed changes
         let fromViewSuperView = fromView.superview ?? fromView
         let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:targetView.superview)
         targetView.frame.origin.y = fromViewOriginPoint.y - bottomGap - targetView.frame.size.height
     }
-<<<<<<< Updated upstream
 
     func setLeftGap(_ leftGap:CGFloat, fromView:UIView?) {
-=======
-    
-    public func ct_setLeftGap(_ leftGap:CGFloat, fromView:UIView?) {
->>>>>>> Stashed changes
         guard let fromView = fromView else { return }
         
         let fromViewSuperView = fromView.superview ?? fromView
@@ -467,7 +397,6 @@ public extension HandyFrameView {
         let newOriginPoint = topView.convert(fromViewOriginPoint, to: targetView.superview)
         targetView.frame.origin.x = newOriginPoint.x + leftGap + fromView.frame.size.width
     }
-<<<<<<< Updated upstream
 
     func setRightGap(_ rightGap:CGFloat, fromView:UIView?) {
         guard let fromView = fromView else { return }
@@ -498,87 +427,6 @@ public extension HandyFrameView {
         guard let superview = targetView.superview else { return }
         let height = superview.frame.size.height - safeAreaBottomGap
         targetView.frame = CGRect(x: 0, y: 0, width: superview.frame.size.width, height: height)
-=======
-    
-    public func ct_setRightGap(_ rightGap:CGFloat, fromView:UIView?) {
-        guard let fromView = fromView else { return }
-        
-        let fromViewSuperView = fromView.superview ?? fromView
-        let topSuperView = ct_topSuperView()
-        let fromViewOriginPoint = fromViewSuperView.convert(fromView.frame.origin, to:topSuperView)
-        let newOriginPoint = topSuperView.convert(fromViewOriginPoint, to: superview)
-        frame.origin.x = newOriginPoint.x - rightGap - fromView.frame.size.width
-    }
-    
-    //MARK: top/bottom/left/right equal to Other View
-    public func ct_topEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-        
-        let viewSuperView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
-        let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
-        let newOriginPoint = topSuperView.convert(viewOriginPoint, to: superview)
-        frame.origin.y = newOriginPoint.y
-    }
-    
-    public func ct_bottomEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-        
-        let viewSuperView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
-        let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
-        let newOriginPoint = topSuperView.convert(viewOriginPoint, to: superview)
-        frame.origin.y = newOriginPoint.y + view.frame.size.height - frame.size.height
-    }
-    
-    public func ct_leftEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-        
-        let viewSuperView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
-        let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
-        let newOriginPoint = topSuperView.convert(viewOriginPoint, to: superview)
-        frame.origin.x = newOriginPoint.x
-    }
-    
-    public func ct_rightEqualToView(_ view:UIView?) {
-        guard let view = view else { return }
-
-        let viewSuperView = view.superview ?? view
-        let topSuperView = ct_topSuperView()
-        let viewOriginPoint = viewSuperView.convert(view.frame.origin, to:topSuperView)
-        let newOriginPoint = topSuperView.convert(viewOriginPoint, to: superview)
-        frame.origin.x = newOriginPoint.x + view.frame.size.width - frame.size.width
-    }
-    
-    //MARK: Fill
-    public func ct_fillWidth() {
-        frame.size.width = superview!.frame.size.width
-        frame.origin.x = 0
-    }
-    
-    public func ct_fillHeight() {
-        frame.size.height = superview!.frame.size.height
-        frame.origin.y = 0
-    }
-    
-    public func ct_fill() {
-        frame = CGRect(x: 0, y: 0, width: superview!.frame.size.width, height: superview!.frame.size.height)
-    }
-
-    //MARK: helper method
-    private func ct_topSuperView() -> UIView {
-        var topSuperView = superview
-        if topSuperView == nil {
-            topSuperView = self
-        } else {
-            while topSuperView!.superview != nil {
-                topSuperView = topSuperView!.superview
-            }
-        }
-        
-        return topSuperView!
->>>>>>> Stashed changes
     }
 }
 
