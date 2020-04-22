@@ -2,7 +2,7 @@
 
 # view的尺寸
 
-## 基础方法
+## 基础方法(width, height, size)
 ```swift
 
 // 基础方法
@@ -16,7 +16,7 @@ let size = view.hf.size()
 view.hf.setSize(CGSize(width: 10, height: 20))
 ```
 
-## 修改宽度高度
+## 修改宽度高度(width, height)
 
 ```swift
 // 修改宽度高度
@@ -35,41 +35,7 @@ view.hf.fillHeight() // 高度填满父view
 view.hf.fill() // 宽度和高度都填满父view
 ```
 
-# view的位置
-
-## 基础方法
-
-```swift
-let x = view.hf.x()
-view.hf.setX(10)
-
-let y = view.hf.y()
-view.hf.setY(10)
-
-let center = view.hf.center()
-view.hf.setCenter(CGPoint(x: 10, y: 10))
-
-let centerX = view.hf.centerX()
-view.hf.setCenterX(10)
-
-let centerY = view.hf.centerY()
-view.hf.setCenterY(10)
-```
-
-## Center与其它View的Center相等
-
-```swift
-
-// otherView为UIView
-
-view.hf.setCenterEqualToView(otherView)
-view.hf.setCenterXEqualToView(otherView)
-view.hf.setCenterYEqualToView(otherView)
-```
-
-## 根据View的left,right,top, bottom调整位置
-
-### shouldResize的意义
+# shouldResize的意义
 
 shouldResize是指在设置值的时候，是否要改变view的尺寸。
 
@@ -144,6 +110,40 @@ shouldResize=true
 |                                                   |
 -----------------------------------------------------
 ```
+
+# view的位置
+
+## 基础方法(x, y, center, centerX, centerY)
+
+```swift
+let x = view.hf.x()
+view.hf.setX(10)
+
+let y = view.hf.y()
+view.hf.setY(10)
+
+let center = view.hf.center()
+view.hf.setCenter(CGPoint(x: 10, y: 10))
+
+let centerX = view.hf.centerX()
+view.hf.setCenterX(10)
+
+let centerY = view.hf.centerY()
+view.hf.setCenterY(10)
+```
+
+## Center与其它View的Center相等
+
+```swift
+
+// otherView为UIView
+
+view.hf.setCenterEqualToView(otherView)
+view.hf.setCenterXEqualToView(otherView)
+view.hf.setCenterYEqualToView(otherView)
+```
+
+## 根据View的left,right,top, bottom调整位置
 
 ```swift
 let left = view.hf.left()
