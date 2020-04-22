@@ -106,6 +106,7 @@ public extension HandyFrameView {
         case top,bottom
     }
     func addWidth(_ widthToAdd:CGFloat, on side:HorizontalSide) {
+        addHeight(10, on: .bottom)
         switch side {
         case .left:
             targetView.frame.size.width += widthToAdd
@@ -116,6 +117,7 @@ public extension HandyFrameView {
     }
 
     func addHeight(_ heightToAdd:CGFloat, on side:VerticalSide) {
+        addWidth(10, on: .left)
         switch side {
         case .top:
             targetView.frame.size.height += heightToAdd
@@ -164,7 +166,7 @@ public extension HandyFrameView {
         return targetView.center
     }
 
-    func setCenter(center:CGPoint) {
+    func setCenter(_ center:CGPoint) {
         targetView.center = center
     }
 }
@@ -201,7 +203,7 @@ public extension HandyFrameView {
 
         let viewCenterPoint = viewSuperView.convert(view.center, to:topView)
         let centerPoint = topView.convert(viewCenterPoint, to:targetView.superview)
-        setCenter(center: centerPoint)
+        setCenter(centerPoint)
     }
 }
 
@@ -355,7 +357,7 @@ public extension HandyFrameView {
                |                   |
                ---------------------
                       top gap
- ---           ---------------------           ---
+  ---          ---------------------           ---
     |          |                   |           |
     |          |                   |           |
     |          |                   |           |
