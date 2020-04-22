@@ -1,5 +1,30 @@
 > pod "SwiftHandyFrame"
 
+# 最佳实践
+
+由于SwiftHandyFrame是基于frame的布局系统，所以在任何场景都可以直接修改view的布局。
+
+但有些frame调整在计算布局的时候会依赖父view,所以为了保证能够使用完整的功能，第一次布局的时候应该在viewDidLoad的时候addSubview，在viewWillLayoutSubviews的时候使用SwiftHandyFrame进行布局。
+
+以后修改布局就不受限制了。
+
+```swift
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.addSubview(shapeView)
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        shapeView.hf.setSize(CGSize(width: 100, height: 100))
+        shapeView.hf.setLeft(20, shouldResize: false)
+        shapeView.hf.setBottom(200, shouldResize: true)
+        shapeView.hf.setTop(10, shouldResize: false)
+    }
+```
+
 # view的尺寸
 
 ## 基础方法(width, height, size)

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         shapeView.hf.setSize(CGSize(width: 100, height: 100))
         shapeView.hf.setLeft(20, shouldResize: false)
         shapeView.hf.setBottom(200, shouldResize: true)
