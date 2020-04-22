@@ -106,7 +106,6 @@ public extension HandyFrameView {
         case top,bottom
     }
     func addWidth(_ widthToAdd:CGFloat, on side:HorizontalSide) {
-        addHeight(10, on: .bottom)
         switch side {
         case .left:
             targetView.frame.size.width += widthToAdd
@@ -117,7 +116,6 @@ public extension HandyFrameView {
     }
 
     func addHeight(_ heightToAdd:CGFloat, on side:VerticalSide) {
-        addWidth(10, on: .left)
         switch side {
         case .top:
             targetView.frame.size.height += heightToAdd
