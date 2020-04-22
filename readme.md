@@ -25,41 +25,6 @@
     }
 ```
 
-# view的尺寸
-
-## 基础方法(width, height, size)
-```swift
-
-// 基础方法
-let width = view.hf.width()
-view.hf.setWidth(20)
-
-let height = view.hf.height()
-view.hf.setHeight(20)
-
-let size = view.hf.size()
-view.hf.setSize(CGSize(width: 10, height: 20))
-```
-
-## 修改宽度高度(width, height)
-
-```swift
-// 修改宽度高度
-view.hf.addWidth(10, on: .left)
-view.hf.addWidth(10, on: .right)
-
-view.hf.addHeight(10, on: .top)
-view.hf.addHeight(10, on: .bottom)
-```
-
-## 填满父view
-
-```swift
-view.hf.fillWidth() // 宽度填满父view
-view.hf.fillHeight() // 高度填满父view
-view.hf.fill() // 宽度和高度都填满父view
-```
-
 # shouldResize的意义
 
 shouldResize是指在设置值的时候，是否要改变view的尺寸。
@@ -134,6 +99,41 @@ shouldResize=true
 |       ----------------------------------          |
 |                                                   |
 -----------------------------------------------------
+```
+
+# view的尺寸
+
+## 基础方法(width, height, size)
+```swift
+
+// 基础方法
+let width = view.hf.width()
+view.hf.setWidth(20)
+
+let height = view.hf.height()
+view.hf.setHeight(20)
+
+let size = view.hf.size()
+view.hf.setSize(CGSize(width: 10, height: 20))
+```
+
+## 修改宽度高度(width, height)
+
+```swift
+// 修改宽度高度
+view.hf.addWidth(10, on: .left)
+view.hf.addWidth(10, on: .right)
+
+view.hf.addHeight(10, on: .top)
+view.hf.addHeight(10, on: .bottom)
+```
+
+## 填满父view
+
+```swift
+view.hf.fillWidth() // 宽度填满父view
+view.hf.fillHeight() // 高度填满父view
+view.hf.fill() // 宽度和高度都填满父view
 ```
 
 # view的位置
