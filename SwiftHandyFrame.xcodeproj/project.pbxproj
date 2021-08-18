@@ -13,6 +13,7 @@
 		4A6961A3212C0E6D00FC634A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6961A2212C0E6D00FC634A /* Assets.xcassets */; };
 		4A6961A6212C0E6D00FC634A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A6961A4212C0E6D00FC634A /* LaunchScreen.storyboard */; };
 		4A6961AF212C0F9600FC634A /* SwiftHandyFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6961AE212C0F9600FC634A /* SwiftHandyFrame.swift */; };
+		773EC2A6E66EBE74AE4227F6 /* libPods-SwiftHandyFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FBB5EFAE2ED4C17B54FAC15 /* libPods-SwiftHandyFrame.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		4A6961A5212C0E6D00FC634A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A6961A7212C0E6D00FC634A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A6961AE212C0F9600FC634A /* SwiftHandyFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHandyFrame.swift; sourceTree = "<group>"; };
+		5FBB5EFAE2ED4C17B54FAC15 /* libPods-SwiftHandyFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftHandyFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EC1B1A74BDED01764FEAA8C /* Pods-SwiftHandyFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHandyFrame.debug.xcconfig"; path = "Target Support Files/Pods-SwiftHandyFrame/Pods-SwiftHandyFrame.debug.xcconfig"; sourceTree = "<group>"; };
+		B2A6A3DCB710019AB276AB9A /* Pods-SwiftHandyFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftHandyFrame.release.xcconfig"; path = "Target Support Files/Pods-SwiftHandyFrame/Pods-SwiftHandyFrame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773EC2A6E66EBE74AE4227F6 /* libPods-SwiftHandyFrame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				4A69619A212C0E6D00FC634A /* SwiftHandyFrame */,
 				4A696199212C0E6D00FC634A /* Products */,
+				7AD9EC351AF8CCDF0E8E41DB /* Pods */,
+				A1ACFC92492EA871923314A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +82,24 @@
 			path = SwiftHandyFrame;
 			sourceTree = "<group>";
 		};
+		7AD9EC351AF8CCDF0E8E41DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EC1B1A74BDED01764FEAA8C /* Pods-SwiftHandyFrame.debug.xcconfig */,
+				B2A6A3DCB710019AB276AB9A /* Pods-SwiftHandyFrame.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A1ACFC92492EA871923314A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FBB5EFAE2ED4C17B54FAC15 /* libPods-SwiftHandyFrame.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A6961AA212C0E6D00FC634A /* Build configuration list for PBXNativeTarget "SwiftHandyFrame" */;
 			buildPhases = (
+				9722CC1A190D86E00EE43D09 /* [CP] Check Pods Manifest.lock */,
 				4A696194212C0E6D00FC634A /* Sources */,
 				4A696195212C0E6D00FC634A /* Frameworks */,
 				4A696196212C0E6D00FC634A /* Resources */,
@@ -141,6 +167,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9722CC1A190D86E00EE43D09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftHandyFrame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A696194212C0E6D00FC634A /* Sources */ = {
@@ -291,6 +342,7 @@
 		};
 		4A6961AB212C0E6D00FC634A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EC1B1A74BDED01764FEAA8C /* Pods-SwiftHandyFrame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +361,7 @@
 		};
 		4A6961AC212C0E6D00FC634A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2A6A3DCB710019AB276AB9A /* Pods-SwiftHandyFrame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
